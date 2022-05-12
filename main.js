@@ -7,6 +7,7 @@ Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
     ...App,
+	store
 })
 app.$mount()
 // #endif
@@ -20,3 +21,9 @@ export function createApp() {
   }
 }
 // #endif
+
+//封装弹窗方法
+uni.$showMsg = function(title='数据请求失败！',duration = 1500){
+	uni.showToast({title,duration});
+	
+}
